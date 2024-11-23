@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: thessepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thessepipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: thessepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: thessepipelinesjavascriptdocker 
+          image: mycontainerregistrythes.azurecr.io/thessepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
